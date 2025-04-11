@@ -4,7 +4,7 @@ This document outlines how to set up and manage your project efficiently using [
 
 ---
 
-## 1. 📂 File Structure
+##  📂 File Structure
 
 Create the following project files in your repo:
 
@@ -14,7 +14,7 @@ Create the following project files in your repo:
 
 ---
 
-## 2. 🔏 .cursorrules
+##  🔏 .cursorrules
 
 ```yaml
 Project Management:
@@ -38,7 +38,7 @@ Documentation:
 
 ---
 
-## 3. 🧍‍♂️ Project_milestones.md
+##  🧍‍♂️ Project_milestones.md
 
 ```md
 # 📌 Project Milestones
@@ -89,7 +89,7 @@ Documentation:
 
 ---
 
-## 4. 📚 Documentation.md
+## 📚 Documentation.md
 
 ```md
 # 📚 Project Documentation
@@ -137,18 +137,9 @@ This document keeps track of:
 
 ---
 
-## ⚙️ Functions
 
-### validate_proposal(proposal: str, scope: str) → bool
-Checks if the proposal covers all scope items.
 
-### generate_summary(document: str) → str
-Generates a short summary using OpenAI.
-```
-
----
-
-## 5. 💡 Tips & Best Practices
+## 💡 Tips & Best Practices
 
 - Use [Awesome Cursor Rules](https://github.com/cursor-dev/awesome-cursor-rules) to enhance your `.cursorrules` file.
 - Reindex the codebase from:
@@ -159,7 +150,7 @@ Generates a short summary using OpenAI.
 
 ---
 
-## 6. 📺 Helpful Video Guides
+##  📺 Helpful Video Guides
 
 - [Cursor Workflow Part 1](https://www.youtube.com/watch?v=1L509JK8p1I)
 - [Cursor Deep Dive Part 2](https://www.youtube.com/watch?v=2PjmPU07KNs)
