@@ -3,141 +3,34 @@
 This document outlines how to set up and manage your project efficiently using [Cursor](https://www.cursor.so).
 
 ---
+1) .cursorrules
+The .cursorrules file contains project-specific instructions that are always in the AI's context. Adding custom rules helps AI provide better, more relevant suggestions.
+- Example: "Always use strict types instead of any in TypeScript."
+- More examples: cursor.directory
 
-##  📂 File Structure
+2) Pre-prompt
+In Cursor settings, under "Rules for AI," you can define custom instructions to refine AI responses:
+- Keep answers concise and direct
+- Suggest alternative solutions
+- Avoid unnecessary explanations
+- Prioritize technical details over generic advice
 
-Create the following project files in your repo:
+3) Code Index
+AI relies on your code index to understand your project. If you're frequently adding or deleting files, outdated indexing can lead to incorrect suggestions.
+- AI might reference old files and produce incorrect code
+- Manual resyncing keeps AI aware of your latest changes
+- Go to Cursor Settings > Resync Index to update it
 
-- `.cursorrules`
-- `Project_milestones.md`
-- `Documentation.md`
+4: Reference Open Editors
+For AI to stay focused, only relevant files should be added to the context.
+- Close unnecessary tabs
+- Open only the files you need
+- Use / Reference Open Editors to quickly add them to context
 
----
-
-##  🔏 .cursorrules
-
-```yaml
-Project Management:
-  - Reference Project_milestones.md for all feature implementations
-  - Reference Documentation.md for all API endpoints and request/response formats
-  - Ensure new code aligns with defined milestones
-  - Follow the established database schema
-  - Consider cost optimizations defined in metrics
-  - Maintain consistency with existing components
-
-Indexing:
-  - Reindex the codebase regularly via Settings → Cursor settings → Features
-
-Workflow:
-  - Work in increments: use Project_milestones.md to decide next feature
-  - Update milestones and documentation after completing tasks
-
-Documentation:
-  - Keep Documentation.md updated with all public functions, schemas, API formats
-```
-
----
-
-##  🧍‍♂️ Project_milestones.md
-
-```md
-# 📌 Project Milestones
-
-## Phase 1: Manual Operations & Testing
-- [ ] Basic API integration
-- [ ] Database schema setup
-- [ ] Basic OpenAI integration
-- [ ] Manual data collection script
-- [ ] Manual analysis trigger
-- [ ] Manual review interface
-- [ ] Testing and refinement
-
----
-
-## Phase 2: Worker Refactoring
-- [ ] Split call-worker (API + data collection)
-- [ ] Split analysis-worker (OpenAI + processing)
-- [ ] Split api-worker (dashboard & admin endpoints)
-- [ ] Implement rate limiting
-- [ ] Add error handling
-- [ ] Add usage and cost tracking
-
----
-
-## Learnings & Architecture Decisions
-
-### ✅ Worker Architecture
-**Current Setup**
-- Single worker handling both API and OpenAI calls
-
-**Issues**
-- Harder to scale
-- No isolation for error handling or rate limits
-- Complex debugging
-
-**Decision**
-- Split workers:
-  - `call-worker`
-  - `analysis-worker`
-  - `api-worker`
-
-**Benefits**
-- Modular scaling
-- Easier error tracking
-- Cost separation
-```
-
----
-
-## 📚 Documentation.md
-
-```md
-# 📚 Project Documentation
-
-## 🧠 Overview
-This document keeps track of:
-- API Endpoints
-- Database schema
-- Core functions
-- Request/response formats
-
----
-
-## 🧪 API Endpoints
-
-### POST /api/submit-proposal
-**Description:** Upload and validate proposal against scope document  
-**Request:**
-```json
-{
-  "proposal": "file",
-  "scope": "file"
-}
-```
-**Response:**
-```json
-{
-  "status": "success",
-  "message": "Proposal is aligned with scope."
-}
-```
-
----
-
-## 💃 Database Schema
-
-### Table: `proposals`
-| Column        | Type       | Description                   |
-|---------------|------------|-------------------------------|
-| id            | UUID       | Primary Key                   |
-| filename      | String     | Name of uploaded proposal     |
-| scope_id      | UUID       | Foreign key to scope doc      |
-| status        | String     | Status of validation          |
-| created_at    | Timestamp  | Upload time                   |
-
----
-
-
+5) Notepads
+Notepads let you save frequently used prompts, file references, and explanations for quick reuse. Instead of manually re-explaining things, simply call a Notepad.
+- Document feature setups (e.g., "How to Add a New API Route")
+- Store common prompts like code reviews or security checks
 
 ## 💡 Tips & Best Practices
 
