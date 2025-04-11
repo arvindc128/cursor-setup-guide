@@ -1,0 +1,19 @@
+# Cursor Rules Configuration
+
+Project Management:
+  - Reference Project_milestones.md for all feature implementations
+  - Reference Documentation.md for all API endpoints and request/response formats
+  - Ensure new code aligns with defined milestones
+  - Follow the established database schema
+  - Consider cost optimizations defined in metrics
+  - Maintain consistency with existing components
+
+Indexing:
+  - Reindex the codebase regularly via Settings → Cursor settings → Features
+
+Workflow:
+  - Work in increments: use Project_milestones.md to decide next feature
+  - Update milestones and documentation after completing tasks
+
+Documentation:
+  - Keep Documentation.md updated with all public functions, schemas, API formats
