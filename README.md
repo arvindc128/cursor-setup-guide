@@ -34,6 +34,7 @@ Notepads let you save frequently used prompts, file references, and explanations
 
 ## 💡 Tips & Best Practices
 
+- Refer the Examples.md file for real life examples for better prompting.
 - Use [Awesome Cursor Rules](https://github.com/cursor-dev/awesome-cursor-rules) to enhance your `.cursorrules` file.
 - Reindex the codebase from:
   > **Settings → Cursor settings → Features**
